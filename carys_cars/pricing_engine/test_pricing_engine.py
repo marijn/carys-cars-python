@@ -23,6 +23,7 @@ class PricingEngineTest(unittest.TestCase):
     @parameterized.expand([
         [Money(24, "EUR"), DurationInMinutes(1), Money(0.24, "EUR")],
         [Money(24, "EUR"), DurationInMinutes(3), Money(0.72, "EUR")],
+        [Money(36, "EUR"), DurationInMinutes(1), Money(0.36, "EUR")],
     ])
     def test_it_calculates_price_based_on_duration(
             self,
