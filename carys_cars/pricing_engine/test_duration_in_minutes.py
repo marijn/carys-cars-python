@@ -7,7 +7,6 @@ class TestDurationInMinutes(unittest.TestCase):
     def test_it_guards_against_negative_DurationInMinutes(self):
         with self.assertRaises(SorryInvalidDurationInMinutes, msg="Sorry, DurationInMinutes should be a positive value of at least 1"):
             DurationInMinutes(-1)
-        raise Exception("Not yet implemented")
 
 
 if __name__ == '__main__':
