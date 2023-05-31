@@ -3,10 +3,7 @@ import unittest
 from parameterized import parameterized
 from moneyed import Money
 
-
-class DurationInMinutes:
-    def __init__(self, duration_in_minutes: int) -> None:
-        self.duration_in_minutes = duration_in_minutes
+from carys_cars.pricing_engine.duration_in_minutes import DurationInMinutes
 
 
 class PricingEngine:
