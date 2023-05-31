@@ -11,7 +11,7 @@ class DurationInMinutes:
 
 class PricingEngine:
     def calculate_price(self, duration: DurationInMinutes) -> Money:
-        return Money(0.24 * duration.duration_in_minutes, "EUR")
+        return Money(0.24, "EUR") * duration.duration_in_minutes
 
 
 class PricingEngineTest(unittest.TestCase):
