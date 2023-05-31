@@ -29,8 +29,10 @@ class PricingEngineTest(unittest.TestCase):
             trip_duration: DurationInMinutes,
             total_price: Money
     ):
+        # Act
         actual = PricingEngine(price_per_minute).calculate_price(trip_duration)
 
+        # Assert
         expected = total_price
         self.assertEqual(expected, actual)
 
