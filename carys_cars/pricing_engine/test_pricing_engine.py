@@ -11,10 +11,10 @@ class DurationInMinutes:
 
 class PricingEngine:
     def __init__(self, price_per_minute: Money) -> None:
-        self.price_per_minute = price_per_minute
+        self.__price_per_minute = price_per_minute
 
     def calculate_price(self, duration: DurationInMinutes) -> Money:
-        price_per_minute = self.price_per_minute
+        price_per_minute = self.__price_per_minute
 
         return price_per_minute * duration.duration_in_minutes
 
