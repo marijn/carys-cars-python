@@ -6,12 +6,12 @@ from moneyed import Money
 
 class DurationInMinutes:
     def __init__(self, duration_in_minutes: int) -> None:
-        pass
+        self.duration_in_minutes = duration_in_minutes
 
 
 class PricingEngine:
     def calculate_price(self, duration: DurationInMinutes) -> Money:
-        return Money(0.72, "EUR")
+        return Money(0.24 * duration.duration_in_minutes, "EUR")
 
 
 class PricingEngineTest(unittest.TestCase):
