@@ -1,3 +1,8 @@
+from typing import TypeVar
+
+SorryInvalidDurationInMinutesType = TypeVar('SorryInvalidDurationInMinutesType', bound="SorryInvalidDurationInMinutes")
+
+
 class DurationInMinutes:
     def __init__(self, duration_in_minutes: int) -> None:
         if duration_in_minutes < 0:
@@ -8,5 +13,5 @@ class DurationInMinutes:
 
 class SorryInvalidDurationInMinutes(Exception):
     @classmethod
-    def because_it_should_be_positive(cls):
+    def because_it_should_be_positive(cls) -> SorryInvalidDurationInMinutesType:
         return SorryInvalidDurationInMinutes("Sorry, DurationInMinutes should be a positive value of at least 1")
