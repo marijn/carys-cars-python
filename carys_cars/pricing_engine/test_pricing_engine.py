@@ -18,16 +18,17 @@ class PricingEngine:
 
 class PricingEngineTest(unittest.TestCase):
     @parameterized.expand([
-        [DurationInMinutes(1), Money(0.24, "EUR")],
-        [DurationInMinutes(3), Money(0.72, "EUR")],
+        [Money(24, "EUR"), DurationInMinutes(1), Money(0.24, "EUR")],
+        [Money(24, "EUR"), DurationInMinutes(3), Money(0.72, "EUR")],
     ])
     def test_it_calculates_price_based_on_duration(
             self,
+            price_per_minute: Money,
             trip_duration: DurationInMinutes,
             total_price: Money
     ):
         expected = total_price
-        actual = PricingEngine().calculate_price(trip_duration)
+        actual = PricingEngine(price_per_minute).calculate_price(trip_duration)
 
         self.assertEqual(expected, actual)
 
