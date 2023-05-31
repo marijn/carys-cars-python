@@ -29,9 +29,9 @@ class PricingEngineTest(unittest.TestCase):
             trip_duration: DurationInMinutes,
             total_price: Money
     ):
-        expected = total_price
         actual = PricingEngine(price_per_minute).calculate_price(trip_duration)
 
+        expected = total_price
         self.assertEqual(expected, actual)
 
 
