@@ -21,7 +21,11 @@ class PricingEngineTest(unittest.TestCase):
         [DurationInMinutes(1), Money(0.24, "EUR")],
         [DurationInMinutes(3), Money(0.72, "EUR")],
     ])
-    def test_it_calculates_price_based_on_duration(self, trip_duration: DurationInMinutes, total_price: Money):
+    def test_it_calculates_price_based_on_duration(
+            self,
+            trip_duration: DurationInMinutes,
+            total_price: Money
+    ):
         expected = total_price
         actual = PricingEngine().calculate_price(trip_duration)
 
