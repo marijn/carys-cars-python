@@ -1,6 +1,6 @@
 import unittest
 
-from carys_cars.pricing_engine.duration_in_minutes import DurationInMinutes
+from carys_cars.pricing_engine.duration_in_minutes import DurationInMinutes, SorryInvalidDurationInMinutes
 
 
 class TestDurationInMinutes(unittest.TestCase):
