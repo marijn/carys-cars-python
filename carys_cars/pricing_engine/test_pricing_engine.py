@@ -10,6 +10,9 @@ class DurationInMinutes:
 
 
 class PricingEngine:
+    def __init__(self, price_per_minute: Money) -> None:
+        pass
+
     def calculate_price(self, duration: DurationInMinutes) -> Money:
         price_per_minute = Money(0.24, "EUR")
 
