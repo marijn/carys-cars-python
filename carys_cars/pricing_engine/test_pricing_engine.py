@@ -1,5 +1,6 @@
 import unittest
 
+from parameterized import parameterized
 from moneyed import Money
 
 
@@ -14,9 +15,12 @@ class PricingEngine:
 
 
 class PricingEngineTest(unittest.TestCase):
-    def test_it_calculates_price_based_on_duration(self):
-        expected = Money(0.72, "EUR")
-        actual = PricingEngine().calculate_price(DurationInMinutes(3))
+    @parameterized.expand([
+        [DurationInMinutes(3), Money(0.72, "EUR")],
+    ])
+    def test_it_calculates_price_based_on_duration(self, trip_duration: DurationInMinutes, total_price: Money):
+        expected = total_price
+        actual = PricingEngine().calculate_price(trip_duration)
 
         self.assertEqual(expected, actual)
 
