@@ -14,9 +14,7 @@ class PricingEngine:
         self.__price_per_minute = price_per_minute
 
     def calculate_price(self, duration: DurationInMinutes) -> Money:
-        price_per_minute = self.__price_per_minute
-
-        return price_per_minute * duration.duration_in_minutes
+        return self.__price_per_minute * duration.duration_in_minutes
 
 
 class PricingEngineTest(unittest.TestCase):
